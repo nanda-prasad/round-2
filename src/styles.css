@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+.form-control {
+  height: 40px;
+  background: #e8f0fe;
+  border: 0px;
+  width: 100%;
+  letter-spacing: 0px;
+  color: #0a1e43;
+  font-size: 18px;
+  font-family: "Roboto";
+  font-weight: 500;
+  display: block;
+}
+form-label {
+  /* letter-spacing: 0px; */
+  opacity: 1;
+  color: #656f79;
+  margin-bottom: 0.1rem;
+  margin-top: 0.5rem;
+  /* font-weight: 600 !important; */
+  font-family: "Roboto";
+  font-size: 16px;
+  display: block;
+}
+.form-control:focus {
+  outline: none;
+}
+.cust_btn{
+  text-align: center;
+  padding: 7px 20px 7px;
+  border: 1px solid #656f79;
+  border-radius: 20px;
+}
+.cust_btn:focus{
+  outline: none;
+}
+.invalid-feed{
+  color: red;
+  font-size: 13px;
+  font-weight: none;
+}
+.prime-text{
+  font-size: 16px;
+  color: blue;
+  font-weight: 600;
+}
+.prime-text a{
+  font-size: 18px;
+  color: blue !important;
+  font-weight: 600;
+}
+.cust-heading{
+  font-size: 22px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,25 @@
+.table th{
+    font-size: 18px;
+    font-weight: 500;
+}
+.table td{
+    font-size: 16px;
+    font-weight: 500;
+}
+table {
+  width: 100%;
+  overflow: auto;
+}
+.card{
+    overflow: auto;
+    width: 100%;
+}
+.header{
+    padding: 20px;
+    height: 60px;
+    background-color: #3F51B5;
+}
+mat-icon{
+    color: #ffffff;
+    cursor: pointer;
+}

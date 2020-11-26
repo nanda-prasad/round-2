@@ -1,0 +1,84 @@
+<div class="area-cust">
+    <div class="container">
+        <div class="registration_card">
+            <h1>Registration</h1>
+            <form [formGroup]="registerForm" (ngSubmit)="submitRegister(registerForm.value)">
+                <div class="row col-md-12">
+                    <!-- <div class=""> -->
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">First Name</label>
+                            <input type="text" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }">
+                            <div *ngIf="submitted && f.first_name.errors" class="invalid-feed">
+                                <div *ngIf="f.first_name.errors.required">First Name Required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }">
+                            <div *ngIf="submitted && f.last_name.errors" class="invalid-feed">
+                                <div *ngIf="f.last_name.errors.required">Last Name Required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" formControlName="email" class="form-control" (focus)="emailtype()" (focusout)="emailtype(event)" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feed">
+                                <div *ngIf="f.email.errors.required">Email Required</div>
+                            </div>
+                            <div *ngIf="validEmail" class="invalid-feed">
+                                <div>Enter Valid Email</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Phone Number:</label>
+                            <input type="text" formControlName="mobile" class="form-control" pattern="\d*" (keypress)="numberType($event)" minlength="10" maxlength="10" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
+                            <div *ngIf="submitted && f.mobile.errors" class="invalid-feed">
+                                <div *ngIf="f.mobile.errors.required">Mobile Number Required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label d-block ml-1">Gender :</label>
+                            <div class="text-center">
+                                <input type="radio" id="male" name="gender" value="male" class="mr-1" formControlName="gender">
+                                <label for="male" class="mr-3">Male</label>
+                                <input type="radio" id="female" name="gender" value="female" class="mr-1"  formControlName="gender">
+                                <label for="male" class="mr-5">Female</label>
+                            </div>
+                            <div *ngIf="submitted && f.gender.errors" class="invalid-feed">
+                                <div *ngIf="f.gender.errors.required">Gender Required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label d-block ml-1">Password :</label>
+                            <input type="password" formControlName="password" pattern=".{0}|.{8,}" class="form-control" minlength="8" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feed">
+                                <div *ngIf="f.password.errors.required">Password Required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label d-block ml-1">Confirm Password :</label>
+                            <input type="password" formControlName="confirmpassword" class="form-control" minlength="8" [ngClass]="{ 'is-invalid': submitted && f.confirmpassword.errors }">
+                            <div *ngIf="submitted && f.confirmpassword.errors && notValidPassword" class="invalid-feed">
+                                <div *ngIf="f.confirmpassword.errors.required">Password not matching</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <label class="form-label d-block ml-1">Address :</label>
+                            <textarea cols="30" rows="10" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }"></textarea>
+                            <!-- <input type="text"  minlength="8" > -->
+                            <div *ngIf="submitted && f.address.errors" class="invalid-feed">
+                                <div *ngIf="f.address.errors.required">Address Required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-2 text-center">
+                            <button type="submit" class="cust_btn">Register</button>
+                        </div>
+                        <div class="col-md-12 mt-2 text-center">
+                            <p class="prime-text">Do you have account <a routerLink="./login">Login</a></p>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

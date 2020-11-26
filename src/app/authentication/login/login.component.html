@@ -1,0 +1,44 @@
+<div class="area-cust">
+    <div class="container">
+        <div class="registration_card">
+            <h1>Login</h1>
+            <form [formGroup]="loginFrom" (ngSubmit)="login(loginFrom.value)">
+                <div class="row col-md-12">
+                    <div class="col-md-12 mt-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feed">
+                            <div *ngIf="f.email.errors.required">Email Required</div>
+                        </div>
+                        <div *ngIf="validEmail" class="invalid-feed">
+                            <div>Enter Valid Email</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label class="form-label d-block ml-1">Password :</label>
+                        <input type="password" formControlName="password" pattern=".{0}|.{8,}" class="form-control" minlength="8" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feed">
+                            <div *ngIf="f.password.errors.required">Password Required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-2 text-center mt-3">
+                        <button type="submit" class="cust_btn">Login</button>
+                    </div>
+                    <div class="col-md-12 mt-2 text-center">
+                        <p class="prime-text">Register New Account <a routerLink="">Sign UP</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="toast" role="alert" *ngIf="showToster" style="position: absolute; top: 1rem; right: 1rem;">
+    <div class="toast-header">
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+        Login Successfully
+    </div>
+</div>
